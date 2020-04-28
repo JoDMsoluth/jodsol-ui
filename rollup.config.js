@@ -1,61 +1,51 @@
-import peerDepsExternal from "rollup-plugin-peer-deps-external";
-import resolve from "rollup-plugin-node-resolve";
-import typescript from "rollup-plugin-typescript2";
-import sass from "rollup-plugin-sass";
-import commonjs from "rollup-plugin-commonjs";
-import copy from "rollup-plugin-copy";
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import typescript from 'rollup-plugin-typescript2';
+import sass from 'rollup-plugin-sass';
+import commonjs from '@rollup/plugin-commonjs';
+import copy from 'rollup-plugin-copy';
 
-import packageJson from "./package.json";
+import packageJson from './package.json';
 
 export default {
-  input: "src/index.tsx",
-  output: [
-    {
-      file: packageJson.main,
-      format: "cjs",
-      sourcemap: true
-    },
-    {
-      file: packageJson.module,
-      format: "esm",
-      sourcemap: true
-    }
-  ],
-  plugins: [
-    peerDepsExternal(),
-    resolve({
-      browser: true
-    }),
-    typescript({ objectHashIgnoreUnknownHack: true }),
-    commonjs({
-      include: ["node_modules/**"],
-      exclude: ["**/*.stories.js"],
-      namedExports: {
-        "node_modules/react/react.js": [
-          "Children",
-          "Component",
-          "PropTypes",
-          "createElement"
-        ],
-        "node_modules/react-dom/index.js": ["render"]
-      }
-    }),
-    sass({
-      insert: true
-    }),
-    copy({
-      targets: [
+    input: 'src/index.tsx',
+    output: [
         {
-          src: "src/variables.scss",
-          dest: "lib",
-          rename: "variables.scss"
+            file: packageJson.main,
+            format: 'cjs',
+            sourcemap: true,
         },
         {
-          src: "src/typography.scss",
-          dest: "lib",
-          rename: "typography.scss"
-        }
-      ]
-    })
-  ]
+            file: packageJson.module,
+            format: 'esm',
+            sourcemap: true,
+        },
+    ],
+    preserveModules: true,
+    plugins: [
+        peerDepsExternal(),
+        nodeResolve({
+            browser: true,
+        }),
+
+        typescript({ objectHashIgnoreUnknownHack: true }),
+        commonjs(),
+        sass({
+            insert: true,
+        }),
+        copy({
+            targets: [
+                {
+                    src: 'src/variables.scss',
+                    dest: 'lib',
+                    rename: 'variables.scss',
+                },
+                {
+                    src: 'src/typography.scss',
+                    dest: 'lib',
+                    rename: 'typography.scss',
+                },
+            ],
+        }),
+    ],
 };
