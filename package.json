@@ -1,30 +1,32 @@
 {
     "name": "jodsol-ui",
-    "version": "1.0.0",
+    "version": "v0.1.0",
     "main": "lib/index.js",
     "module": "lib/index.esm.js",
+    "types": "lib/index.d.ts",
     "files": [
         "lib"
     ],
-    "description": "",
+    "description": "jodsol design system",
     "scripts": {
         "build": "rollup -c",
         "test": "jest --watch",
         "test:once": "jest",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
-        "deploy-storybook": "storybook-to-ghpages"
+        "deploy-storybook": "storybook-to-ghpages",
+        "publish-storybook": "npm publish --access=public"
     },
     "keywords": [],
-    "author": "jodmsoluth",
-    "license": "ISC",
+    "author": "jodsol",
+    "license": "MIT",
     "peerDependencies": {
         "react": "^16.13.1",
         "react-dom": "^16.13.1"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/JoDMsoluth/jodsol-ui.git"
+        "url": "https://github.com/JoDMsoluth/jodsol-ui.git"
     },
     "bugs": {
         "url": "https://github.com/JoDMsoluth/jodsol-ui.git/issues"
