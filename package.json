@@ -39,6 +39,8 @@
     "homepage": "https://jodmsoluth.github.io/jodsol-ui/",
     "devDependencies": {
         "@babel/core": "^7.7.4",
+        "@commitlint/cli": "^11.0.0",
+        "@commitlint/config-conventional": "^11.0.0",
         "@rollup/plugin-commonjs": "^16.0.0",
         "@rollup/plugin-node-resolve": "^10.0.0",
         "@storybook/addon-actions": "^5.3.18",
@@ -60,6 +62,7 @@
         "enzyme": "^3.11.0",
         "enzyme-adapter-react-16": "^1.15.2",
         "enzyme-to-json": "^3.4.3",
+        "husky": "^4.3.0",
         "identity-obj-proxy": "^3.0.0",
         "jest": "^24.9.0",
         "react-is": "^16.13.1",
