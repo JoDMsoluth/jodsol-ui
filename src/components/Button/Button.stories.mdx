@@ -1,0 +1,36 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Button from "./";
+
+<Meta title="Components/Button" component={Button} />
+
+# Test Component
+
+My test component, which show headet text and body
+
+# Props
+
+<Props of={Button} />
+
+## Basic usage
+
+<Preview>  
+  <Story name="Default Button">
+      <Button>디폴트버튼</Button>
+  </Story>
+</Preview>
+
+## Primary usage
+
+<Preview>  
+  <Story name="Primary Button">
+      <Button theme="primary">첫번째 테마</Button>
+  </Story>
+</Preview>
+
+## Secondary usage
+
+<Preview>  
+  <Story name="Second Button">
+      <Button theme="secondary">두번째 테마</Button>
+  </Story>
+</Preview>
