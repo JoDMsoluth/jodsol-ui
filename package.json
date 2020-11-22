@@ -1,6 +1,6 @@
 {
     "name": "jodsol-ui",
-    "version": "v0.1.0",
+    "version": "v0.1.1",
     "main": "lib/index.js",
     "module": "lib/index.esm.js",
     "types": "lib/index.d.ts",

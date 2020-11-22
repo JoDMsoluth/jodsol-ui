@@ -11,7 +11,12 @@ export default {
 };
 
 export const defaultButton = () => {
-  return <Button>default 버튼</Button>;
+  return (
+    <>
+      <Button>default 버튼</Button>
+      <h1>디폴트 버튼</h1>
+    </>
+  );
 };
 
 export const primaryButton = () => {
