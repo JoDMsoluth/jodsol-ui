@@ -17,7 +17,7 @@ export interface IProps {
 
 const Button: React.FC<IProps> = ({ children, theme = ButtonType.DEFAULT }) => {
     const classNameProps = classNames(styles.default, styles[theme]);
-    return <button className={classNameProps}>{children}</button>;
+    return <button test-id="button" className={classNameProps}>{children}</button>;
 };
 
 export default Button;
