@@ -3,7 +3,7 @@ import React from 'react'
 interface ITest {
   /**
     * Header text
-    **/
+  **/
   header: string,
   /**
    * Body text
